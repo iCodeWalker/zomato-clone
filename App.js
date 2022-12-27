@@ -22,7 +22,9 @@ import HomeScreen from './src/screens/HomeScreen';
 const App = () => {
   return (
     <SafeAreaView>
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
+      <ScrollView
+        contentInsetAdjustmentBehavior="automatic"
+        showsVerticalScrollIndicator={false}>
         <View>
           <HomeScreen />
         </View>

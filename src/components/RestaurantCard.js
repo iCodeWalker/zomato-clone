@@ -70,7 +70,7 @@ const RestaurantCard = () => {
       <View style={{position: 'absolute', top: 150, left: -10}}>
         <View
           style={{
-            backgroundColor: '#4714FFv ',
+            backgroundColor: '#4714dd',
             paddingHorizontal: 15,
             paddingVertical: 5,
             borderTopRightRadius: 10,

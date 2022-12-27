@@ -1,14 +1,11 @@
 import React from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
 
-const CircleCard = () => {
+const CircleCard = ({imageUrl, title}) => {
   return (
     <View style={{display: 'flex', alignItems: 'center', margin: 10}}>
-      <Image
-        source={require('../assets/images/dish.jpg')}
-        style={styles.imageContainer}
-      />
-      <Text style={styles.title}>Burger</Text>
+      <Image source={imageUrl} style={styles.imageContainer} />
+      <Text style={styles.title}>{title}</Text>
     </View>
   );
 };
