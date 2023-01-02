@@ -1,16 +1,102 @@
 import React from 'react';
-import {View, Text, ScrollView} from 'react-native';
+import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
 import CircleCard from '../components/CircleCard';
 import RestaurantCard from '../components/RestaurantCard';
-import SearchBar from '../components/SearchBar';
 import SmallCard from '../components/SmallCard';
-import Header from '../components/header';
+import OfferCard from '../components/OfferCard';
+import Header from '../components/Header';
 
-const HomeScreen = () => {
+const restaurants = [
+  {
+    id: 1,
+    name: 'KFC',
+    cusines: 'Burger, Fast Food',
+    rating: '3.8',
+    amountForOne: '$20',
+    isVeg: false,
+    specialFood: 'Chicken Wings',
+    specialFoodAmount: '$10',
+    ordersPlaced: '995+',
+    isFavourite: false,
+    offerPercent: '20%',
+    offerAmount: '$15',
+  },
+  {
+    id: 2,
+    name: "McDonald's",
+    cusines: 'Burger, Fast Food, Beverages',
+    rating: '4.1',
+    amountForOne: '$20',
+    isVeg: false,
+    specialFood: 'Burger',
+    specialFoodAmount: '$10',
+    ordersPlaced: '1005+',
+    isFavourite: false,
+    offerPercent: '60%',
+    offerAmount: '$10',
+  },
+  {
+    id: 3,
+    name: "Domino's Pizza",
+    cusines: 'Pizza, Italian, Pasta',
+    rating: '4.0',
+    amountForOne: '$20',
+    isVeg: false,
+    specialFood: 'Pizza',
+    specialFoodAmount: '$10',
+    ordersPlaced: '17+',
+    isFavourite: false,
+    offerPercent: '10%',
+    offerAmount: '$10',
+  },
+  {
+    id: 4,
+    name: "La Pino'z Pizza",
+    cusines: 'Pizza, Italian, Pasta',
+    rating: '3.7',
+    amountForOne: '$20',
+    isVeg: false,
+    specialFood: 'Cheezy Pizza',
+    specialFoodAmount: '$10',
+    ordersPlaced: '895+',
+    isFavourite: false,
+    offerPercent: '55%',
+    offerAmount: '$10',
+  },
+  {
+    id: 5,
+    name: 'Burger King',
+    cusines: 'Burger, Fast Food',
+    rating: '3.5',
+    amountForOne: '$20',
+    isVeg: false,
+    specialFood: 'King Burger',
+    specialFoodAmount: '$10',
+    ordersPlaced: '675+',
+    isFavourite: false,
+    offerPercent: '40%',
+    offerAmount: '$10',
+  },
+  {
+    id: 6,
+    name: 'Cake Walkers',
+    cusines: 'Fast Food, Bakery',
+    rating: '3.8',
+    amountForOne: '$10',
+    isVeg: true,
+    specialFood: 'Red Velvet Cake',
+    specialFoodAmount: '$5',
+    ordersPlaced: '52+',
+    isFavourite: true,
+    offerPercent: '30%',
+    offerAmount: '$15',
+  },
+];
+
+const HomeScreen = ({navigation}) => {
   return (
-    <View style={{height: '100%'}}>
+    <ScrollView style={{height: '100%'}}>
       <Header />
-      <SearchBar />
       <ScrollView
         horizontal={true}
         showsHorizontalScrollIndicator={false}
@@ -23,6 +109,7 @@ const HomeScreen = () => {
         <SmallCard title="Cuisines" />
         <SmallCard title="More" />
       </ScrollView>
+      <OfferCard />
       <View style={{marginLeft: 16}}>
         <Text
           style={{
@@ -126,8 +213,33 @@ const HomeScreen = () => {
         </Text>
       </View>
 
-      <RestaurantCard />
-    </View>
+      {restaurants.map((item, index) => {
+        return (
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate('Restaurant Details', {
+                restaurantId: item.id,
+                restaurantName: item.name,
+              })
+            }>
+            <RestaurantCard
+              key={index}
+              name={item.name}
+              cusines={item.cusines}
+              rating={item.rating}
+              amountForOne={item.amountForOne}
+              isVeg={item.isVeg}
+              specialFood={item.specialFood}
+              specialFoodAmount={item.specialFoodAmount}
+              ordersPlaced={item.ordersPlaced}
+              isFavourite={item.isFavourite}
+              offerPercent={item.offerPercent}
+              offerAmount={item.offerAmount}
+            />
+          </TouchableOpacity>
+        );
+      })}
+    </ScrollView>
   );
 };
 

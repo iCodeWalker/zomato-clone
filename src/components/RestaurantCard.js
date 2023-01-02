@@ -2,7 +2,19 @@ import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const RestaurantCard = () => {
+const RestaurantCard = ({
+  name,
+  cusines,
+  rating,
+  amountForOne,
+  isVeg,
+  specialFood,
+  specialFoodAmount,
+  ordersPlaced,
+  isFavourite,
+  offerPercent,
+  offerAmount,
+}) => {
   return (
     <View
       style={{
@@ -21,29 +33,34 @@ const RestaurantCard = () => {
         //   uri: 'https://reactnative.dev/img/tiny_logo.png',
         // }}
       />
-      <View
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-        }}>
-        <Text
+
+      {isVeg ? (
+        <View
           style={{
-            backgroundColor: 'green',
-            opacity: 0.8,
-            color: '#ffffff',
-            fontWeight: '800',
-            padding: 5,
-            width: '100%',
-            textAlign: 'center',
-            borderTopLeftRadius: 10,
-            borderTopRightRadius: 10,
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
           }}>
-          <Icon name="leaf" size={15} /> PURE VEG RESTAURANT
-        </Text>
-      </View>
+          <Text
+            style={{
+              backgroundColor: 'green',
+              opacity: 0.8,
+              color: '#ffffff',
+              fontWeight: '800',
+              padding: 5,
+              width: '100%',
+              textAlign: 'center',
+              borderTopLeftRadius: 10,
+              borderTopRightRadius: 10,
+            }}>
+            <Icon name="leaf" size={15} /> PURE VEG RESTAURANT
+          </Text>
+        </View>
+      ) : (
+        <View></View>
+      )}
 
       <View
         style={{
@@ -59,11 +76,27 @@ const RestaurantCard = () => {
             borderRadius: 10,
           }}>
           <Text style={{color: 'black', fontWeight: '600', fontSize: 12}}>
-            Masala Dosa
+            {specialFood}
           </Text>
           <Text style={{color: 'black', fontWeight: '600', fontSize: 12}}>
-            Order for $10
+            Order for {specialFoodAmount}
           </Text>
+        </View>
+      </View>
+
+      <View style={{position: 'absolute', top: 40, left: 10}}>
+        <View
+          style={{
+            backgroundColor: '#ffffffaa',
+            paddingHorizontal: 15,
+            paddingVertical: 5,
+            borderRadius: 50,
+          }}>
+          {isFavourite ? (
+            <Icon name="heart" size={25} color="#e63946" />
+          ) : (
+            <Icon name="heart-outline" size={25} color="#e63946" />
+          )}
         </View>
       </View>
 
@@ -77,25 +110,25 @@ const RestaurantCard = () => {
             borderBottomRightRadius: 10,
           }}>
           <Text style={{color: '#ffffff', fontWeight: '600', fontSize: 12}}>
-            60% OFF
+            {offerPercent} OFF
           </Text>
           <Text style={{color: '#ffffff', fontWeight: '600', fontSize: 12}}>
-            Up to $10
+            Up to {offerAmount}
           </Text>
         </View>
       </View>
 
       <View style={styles.textContainer}>
         <View>
-          <Text style={styles.title}>Dream Sandwich</Text>
-          <Text style={styles.subtitle}>Fast Food, Pizza, Sandwich</Text>
+          <Text style={styles.title}>{name}</Text>
+          <Text style={styles.subtitle}>{cusines}</Text>
         </View>
 
         <View>
           <Text style={styles.rating}>
-            3.9 <Icon name="star" size={15} />
+            {rating} <Icon name="star" size={15} />
           </Text>
-          <Text style={styles.subtitle}>$100 for one</Text>
+          <Text style={styles.subtitle}>{amountForOne} for one</Text>
         </View>
       </View>
       <View style={styles.ordersPlacedDesc}>
@@ -105,7 +138,7 @@ const RestaurantCard = () => {
         </View>
 
         <Text style={{marginLeft: 10}}>
-          1075+ orders placed from here recently
+          {ordersPlaced} orders placed from here recently
         </Text>
       </View>
     </View>

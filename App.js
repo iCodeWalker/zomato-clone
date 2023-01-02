@@ -7,6 +7,11 @@
  */
 
 import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 import {
   SafeAreaView,
@@ -17,19 +22,25 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-import HomeScreen from './src/screens/HomeScreen';
+import RestaurantDetail from './src/screens/RestaurantDetailScreen';
+import TabNavigator from './src/containers/TabNavigator';
 
 const App = () => {
   return (
-    <SafeAreaView>
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        showsVerticalScrollIndicator={false}>
-        <View>
-          <HomeScreen />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={TabNavigator}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Restaurant Details"
+          component={RestaurantDetail}
+          options={{headerShown: true}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
