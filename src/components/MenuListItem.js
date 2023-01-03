@@ -4,17 +4,16 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import AddButton from './AddButton';
 import VegIcon from './VegIcon';
 
-const MenuListItem = () => {
+const MenuListItem = ({item}) => {
   return (
     <View
       style={{
-        marginHorizontal: 16,
         marginTop: 10,
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'flex-start',
-        paddingBottom: 40,
+        paddingVertical: 40,
         borderBottomWidth: 1,
         borderBottomColor: 'grey',
         borderStyle: 'dashed',
@@ -28,7 +27,7 @@ const MenuListItem = () => {
         </View>
 
         <Text style={{fontSize: 16, color: 'black', fontWeight: '700'}}>
-          Plain Cheese Pizza
+          {item.dishName}
         </Text>
         <View
           style={{
@@ -80,13 +79,13 @@ const MenuListItem = () => {
           </View>
           <View>
             <Text style={{marginLeft: 10, fontWeight: '600', color: 'black'}}>
-              56 reviews
+              {item.reviews} reviews
             </Text>
           </View>
         </View>
         <View style={{marginTop: 10}}>
           <Text style={{color: 'black', fontSize: 14, fontWeight: '800'}}>
-            $ 8.9
+            {item.dishPrice}
           </Text>
         </View>
       </View>

@@ -1,0 +1,111 @@
+[{
+    "id":"1",
+    "name":"KFC",
+    "typeOfCuisines":"Burger, Fast Food",
+    "address":"Vijay Nagar, Indore",
+    "averageDeliveryTime":"40 min",
+    "distance":"2 km",
+    "coupons":[
+        {
+            "percentOff":"40%",
+            "amountOff":"$20",
+            "codeName":"CRAVINGS"
+        },
+        {
+            "percentOff":"30%",
+            "amountOff":"$10",
+            "codeName":"CRAVING30"
+        }
+    ],
+    "cuisines":[{
+        "sectionName":"Recommended",
+        "dishes":[
+            {
+                "isVeg":false,
+                "dishName":"Plain Panner Burger",
+                "rating":4,
+                "reviews":"60",
+                "dishPrice":"$4.8",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Cheese Panner Burger",
+                "rating":3,
+                "reviews":"50",
+                "dishPrice":"$3.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Aalu Tikki Burger",
+                "rating":4,
+                "reviews":"100",
+                "dishPrice":"$1.9",
+                "imageUrl":""
+            }
+        ] 
+    },
+    {
+        "sectionName":"Burgers",
+        "dishes":[
+            {
+                "isVeg":false,
+                "dishName":"Cheese Burger",
+                "rating":4,
+                "reviews":"60",
+                "dishPrice":"$2.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Chicken Burger",
+                "rating":3,
+                "reviews":"5",
+                "dishPrice":"$5.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Meat Ball Burger",
+                "rating":4,
+                "reviews":"100",
+                "dishPrice":"$1.9",
+                "imageUrl":""
+            }
+        ] 
+    },
+    {
+        "sectionName":"Pizzas",
+        "dishes":[
+            {
+                "isVeg":false,
+                "dishName":"Cheese Pizza",
+                "rating":3,
+                "reviews":"6",
+                "dishPrice":"$12.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Chicken Pizza",
+                "rating":3,
+                "reviews":"5",
+                "dishPrice":"$11.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Cheese Onion Pizza",
+                "rating":4,
+                "reviews":"10",
+                "dishPrice":"$10.9",
+                "imageUrl":""
+            }
+        ] 
+    }
+]
+}
+
+
+]
