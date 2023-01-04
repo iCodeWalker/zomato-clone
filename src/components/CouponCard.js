@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const CouponCard = () => {
+const CouponCard = ({couponData}) => {
   return (
     <View
       style={{
@@ -31,10 +31,10 @@ const CouponCard = () => {
           padding: 10,
         }}>
         <Text style={{color: 'black', fontWeight: '700', fontSize: 15}}>
-          20% OFF up to $10
+          {couponData.percentOff} OFF up to {couponData.amountOff}
         </Text>
         <Text style={{color: 'grey', fontWeight: '500', fontSize: 13}}>
-          use code CRAVINGS
+          use code {couponData.codeName}
         </Text>
       </View>
     </View>

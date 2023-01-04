@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 const RestaurantCard = ({
   name,
+  restroID,
   cusines,
   rating,
   amountForOne,

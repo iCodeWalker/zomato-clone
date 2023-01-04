@@ -1,17 +1,21 @@
 [{
-    "id":"1",
+    "id":1,
     "name":"KFC",
-    "typeOfCuisines":"Burger, Fast Food",
+    "typeOfCuisines":"Burger, Fast Food, Biryani",
     "address":"Vijay Nagar, Indore",
     "averageDeliveryTime":"40 min",
     "distance":"2 km",
+    "restroRating": "3.8",
+    "restroReviews":"432",
     "coupons":[
         {
+            "couponDescription":"Free Delivery",
             "percentOff":"40%",
             "amountOff":"$20",
             "codeName":"CRAVINGS"
         },
         {
+            "couponDescription":"Flat $10 OFF",
             "percentOff":"30%",
             "amountOff":"$10",
             "codeName":"CRAVING30"
@@ -22,6 +26,241 @@
         "dishes":[
             {
                 "isVeg":false,
+                "dishName":"Mingles Bucket",
+                "rating":4,
+                "reviews":"102",
+                "dishPrice":"$4.5",
+                "dishDecription":"Mingle of 4 Wings, 2 chicken peri peri boneless strips & a Reg Popcorn",
+                "imageUrl":""
+            },
+            {
+                "isVeg":false,
+                "dishName":"Chicken Popcorn-Large",
+                "rating":3,
+                "reviews":"154",
+                "dishPrice":"$3.5",
+                "dishDecription":"Signature bite-sized boneless chicken, with special spices",
+                "imageUrl":""
+            },
+            {
+                "isVeg":false,
+                "dishName":"Popcorn Chicken Biryani Bucket",
+                "rating":3,
+                "reviews":"138",
+                "dishPrice":"$2.9",
+                "dishDecription":"New Hyderabadi style Biryani rice served with signature Popcorn & a spicy Gravy",
+                "imageUrl":""
+            },
+            {
+                "isVeg":false,
+                "dishName":"Chicken Zinger Burger - Tandoori",
+                "rating":4,
+                "reviews":"160",
+                "dishPrice":"$1.5",
+                "dishDecription":"Chicken zinger with a delicious tandoori sauce",
+                "imageUrl":""
+            },
+            {
+                "isVeg":false,
+                "dishName":"Chicken Zinger Burger - Classic",
+                "rating":4,
+                "reviews":"140",
+                "dishPrice":"$2.5",
+                "dishDecription":"Signature chicken burger made with a crunchy chicken fillet, veggies",
+                "imageUrl":""
+            },
+            {
+                "isVeg":false,
+                "dishName":"Grilled Chicken - Smoky Red- 5pc",
+                "rating":4,
+                "reviews":"48",
+                "dishPrice":"$5.5",
+                "dishDecription":"5pc Smoky red grilled chicken",
+                "imageUrl":""
+            }
+            
+        ] 
+    },
+    {
+        "sectionName":"Burgers",
+        "dishes":[
+            {
+                "isVeg":false,
+                "dishName":"Chikcen Burger Meal",
+                "rating":4,
+                "reviews":"20",
+                "dishPrice":"$4.9",
+                "dishDecription":"Classic Chicken zingers and popcorn combo",
+                "imageUrl":""
+            },
+            {
+                "isVeg":false,
+                "dishName":"Chicken Krisper Burger",
+                "rating":4,
+                "reviews":"17",
+                "dishPrice":"$6.9",
+                "dishDecription":"Deal combo of 2 chicken value burgers, 2 pc Hot and Chrispy",
+                "imageUrl":""
+            },
+            {
+                "isVeg":false,
+                "dishName":"Chicken Zinger Burger - Tandori",
+                "rating":4,
+                "reviews":"160",
+                "dishPrice":"$2.9",
+                "dishDecription":"Chicken zinger with a delicious tandoori sauce",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Veg Zinger Burger",
+                "rating":4,
+                "reviews":"41",
+                "dishPrice":"$2.5",
+                "dishDecription":"Signature veg burger with crispy patties, veggies & tangy sauce",
+                "imageUrl":""
+            }
+        ] 
+    },
+    {
+        "sectionName":"Big Save Combos",
+        "dishes":[
+            {
+                "isVeg":false,
+                "dishName":"Ultimate Savings Bucket",
+                "rating":3,
+                "reviews":"44",
+                "dishPrice":"$8.9",
+                "dishDecription":"Signature bucket with 4pc Hot and crispy chicken, 6 wings, 4 chicken peri peri boneless strips, 1 Dips and Gravy",
+                "imageUrl":""
+            },
+            {
+                "isVeg":false,
+                "dishName":"Big 12 - Chicken Bucket",
+                "rating":4,
+                "reviews":"9",
+                "dishPrice":"$9.9",
+                "dishDecription":"Treat with 10 Hot & Crispy, 2 chicken peri peri boneless strips",
+                "imageUrl":""
+            },
+            {
+                "isVeg":false,
+                "dishName":"Hot & Crispy Chicken - 6pc",
+                "rating":4,
+                "reviews":"14",
+                "dishPrice":"$10.5",
+                "dishDecription":"6 pc signature Hot & crispy chicken",
+                "imageUrl":""
+            },
+            {
+                "isVeg":false,
+                "dishName":"Hot & Crispy Chicken - 2pc",
+                "rating":3,
+                "reviews":"59",
+                "dishPrice":"$3.5",
+                "dishDecription":"Signature Hot & crispy chicken",
+                "imageUrl":""
+            },
+            {
+                "isVeg":false,
+                "dishName":"Grilled Chicken - Smooky Red-5pc",
+                "rating":5,
+                "reviews":"48",
+                "dishPrice":"$5.5",
+                "dishDecription":"5 Smooky red grilled chciken",
+                "imageUrl":""
+            }
+        ] 
+    },
+    {
+        "sectionName":"Snacks",
+        "dishes":[
+            {
+                "isVeg":false,
+                "dishName":"Strips & Rice Combo",
+                "rating":3,
+                "reviews":"6",
+                "dishPrice":"$5.9",
+                "dishDecription":"4 chicken peri peri boneless strips, 1 Dips and Gravy",
+                "imageUrl":""
+            },
+            {
+                "isVeg":false,
+                "dishName":"Solo Feast",
+                "rating":3,
+                "reviews":"5",
+                "dishPrice":"$9.9",
+                "dishDecription":"Treat with 1 Hot & Crispy, 2 chicken peri peri boneless strips",
+                "imageUrl":""
+            },
+            {
+                "isVeg":false,
+                "dishName":"Chicken & Fries Bucket",
+                "rating":3,
+                "reviews":"22",
+                "dishPrice":"$3.5",
+                "dishDecription":"Treat with 1 Hot & Crispy, 2 chicken peri peri, 2 wings, 1 Dip",
+                "imageUrl":""
+            },
+            {
+                "isVeg":false,
+                "dishName":"Hot & Crispy Chicken - 2pc",
+                "rating":3,
+                "reviews":"59",
+                "dishPrice":"$3.5",
+                "dishDecription":"Signature Hot & crispy chicken",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Butter Bun",
+                "rating":5,
+                "reviews":"10",
+                "dishPrice":"$0.5",
+                "dishDecription":"Buttered, soft bun - pairs well with all things",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Veg Patty",
+                "rating":4,
+                "reviews":"15",
+                "dishPrice":"$3.5",
+                "dishDecription":"Delicious, crispy, veg add-on",
+                "imageUrl":""
+            }
+        ] 
+    }
+   
+]
+},
+
+{
+    "id":2,
+    "name":"Mc'Donald",
+    "typeOfCuisines":"Burger, Fast Food",
+    "address":"Vijay Nagar, Indore",
+    "averageDeliveryTime":"35 min",
+    "distance":"1 km",
+    "restroRating": "4.1",
+    "restroReviews":"322",
+    "coupons":[
+        {
+            "percentOff":"40%",
+            "amountOff":"$20",
+            "codeName":"CRAVINGS"
+        },
+        {
+            "percentOff":"30%",
+            "amountOff":"$10",
+            "codeName":"PAYTM30"
+        }
+    ],
+    "cuisines":[{
+        "sectionName":"Recommended",
+        "dishes":[
+            {
+                "isVeg":true,
                 "dishName":"Plain Panner Burger",
                 "rating":4,
                 "reviews":"60",
@@ -50,7 +289,7 @@
         "sectionName":"Burgers",
         "dishes":[
             {
-                "isVeg":false,
+                "isVeg":true,
                 "dishName":"Cheese Burger",
                 "rating":4,
                 "reviews":"60",
@@ -79,7 +318,7 @@
         "sectionName":"Pizzas",
         "dishes":[
             {
-                "isVeg":false,
+                "isVeg":true,
                 "dishName":"Cheese Pizza",
                 "rating":3,
                 "reviews":"6",
@@ -105,7 +344,655 @@
         ] 
     }
 ]
+},
+{
+    "id":3,
+    "name":"Domino's Pizza",
+    "typeOfCuisines":"Pizza, Italian, Pasta",
+    "address":"Vijay Nagar, Indore",
+    "averageDeliveryTime":"30 min",
+    "distance":"3.8 km",
+    "restroRating": "4.0",
+    "restroReviews":"876",
+    "coupons":[
+        {
+            "percentOff":"40%",
+            "amountOff":"$20",
+            "codeName":"CRAVINGS"
+        },
+        {
+            "percentOff":"30%",
+            "amountOff":"$10",
+            "codeName":"PAYTM30"
+        }
+    ],
+    "cuisines":[{
+        "sectionName":"Recommended",
+        "dishes":[
+
+            {
+                "isVeg":true,
+                "dishName":"Cheese Pizza",
+                "rating":3,
+                "reviews":"6",
+                "dishPrice":"$12.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Chicken Pizza",
+                "rating":3,
+                "reviews":"5",
+                "dishPrice":"$11.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Cheese Onion Pizza",
+                "rating":4,
+                "reviews":"10",
+                "dishPrice":"$10.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Margherita Pizza",
+                "rating":4,
+                "reviews":"10",
+                "dishPrice":"$10.9",
+                "imageUrl":""
+            }
+            
+        ] 
+    },
+    {
+        "sectionName":"Burgers",
+        "dishes":[
+            {
+                "isVeg":true,
+                "dishName":"Cheese Burger",
+                "rating":4,
+                "reviews":"60",
+                "dishPrice":"$2.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Chicken Burger",
+                "rating":3,
+                "reviews":"5",
+                "dishPrice":"$5.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Cheese Panner Burger",
+                "rating":4,
+                "reviews":"10",
+                "dishPrice":"$2.1",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Meat Burger",
+                "rating":4,
+                "reviews":"100",
+                "dishPrice":"$1.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Plain Panner Burger",
+                "rating":4,
+                "reviews":"60",
+                "dishPrice":"$4.8",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Cheese Panner Burger",
+                "rating":3,
+                "reviews":"50",
+                "dishPrice":"$3.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Aalu Tikki Burger",
+                "rating":4,
+                "reviews":"100",
+                "dishPrice":"$1.9",
+                "imageUrl":""
+            }
+        ] 
+    },
+    {
+        "sectionName":"Pizzas",
+        "dishes":[
+            {
+                "isVeg":true,
+                "dishName":"Cheese Pizza",
+                "rating":3,
+                "reviews":"6",
+                "dishPrice":"$12.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Chicken Pizza",
+                "rating":3,
+                "reviews":"5",
+                "dishPrice":"$11.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Cheese Onion Pizza",
+                "rating":4,
+                "reviews":"10",
+                "dishPrice":"$10.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Margherita Pizza",
+                "rating":4,
+                "reviews":"10",
+                "dishPrice":"$10.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Farm Fresh Pizza",
+                "rating":4,
+                "reviews":"7",
+                "dishPrice":"$9.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Tandoori Pizza",
+                "rating":3,
+                "reviews":"10",
+                "dishPrice":"$10.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Chilli Corn Pizza",
+                "rating":4,
+                "reviews":"13",
+                "dishPrice":"$7.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Panner Pizza",
+                "rating":4,
+                "reviews":"10",
+                "dishPrice":"$10.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Peri Peri Pizza",
+                "rating":4,
+                "reviews":"10",
+                "dishPrice":"$8.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Mushroom Pizza",
+                "rating":4,
+                "reviews":"10",
+                "dishPrice":"$8.9",
+                "imageUrl":""
+            }
+        ] 
+    }
+]
+},
+{
+    "id":4,
+    "name":"La Pino'z Pizza",
+    "typeOfCuisines":"Pizza, Italian, Pasta",
+    "address":"Vijay Nagar, Indore",
+    "averageDeliveryTime":"25 min",
+    "distance":"1 km",
+    "restroRating": "3.7",
+    "restroReviews":"122",
+    "coupons":[
+        {
+            "percentOff":"40%",
+            "amountOff":"$20",
+            "codeName":"CRAVINGS"
+        },
+        {
+            "percentOff":"30%",
+            "amountOff":"$10",
+            "codeName":"PAYTM30"
+        }
+    ],
+    "cuisines":[{
+        "sectionName":"Recommended",
+        "dishes":[
+            {
+                "isVeg":true,
+                "dishName":"Plain Panner Burger",
+                "rating":4,
+                "reviews":"60",
+                "dishPrice":"$4.8",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Cheese Panner Burger",
+                "rating":3,
+                "reviews":"50",
+                "dishPrice":"$3.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Aalu Tikki Burger",
+                "rating":4,
+                "reviews":"100",
+                "dishPrice":"$1.9",
+                "imageUrl":""
+            }
+        ] 
+    },
+    {
+        "sectionName":"Burgers",
+        "dishes":[
+            {
+                "isVeg":true,
+                "dishName":"Cheese Burger",
+                "rating":4,
+                "reviews":"60",
+                "dishPrice":"$2.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Chicken Burger",
+                "rating":3,
+                "reviews":"5",
+                "dishPrice":"$5.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Meat Ball Burger",
+                "rating":4,
+                "reviews":"100",
+                "dishPrice":"$1.9",
+                "imageUrl":""
+            }
+        ] 
+    },
+    {
+        "sectionName":"Pizzas",
+        "dishes":[
+            {
+                "isVeg":true,
+                "dishName":"Cheese Pizza",
+                "rating":3,
+                "reviews":"6",
+                "dishPrice":"$12.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Chicken Pizza",
+                "rating":3,
+                "reviews":"5",
+                "dishPrice":"$11.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Cheese Onion Pizza",
+                "rating":4,
+                "reviews":"10",
+                "dishPrice":"$10.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Tandoori Pizza",
+                "rating":3,
+                "reviews":"10",
+                "dishPrice":"$10.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Chilli Corn Pizza",
+                "rating":4,
+                "reviews":"13",
+                "dishPrice":"$7.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Panner Pizza",
+                "rating":4,
+                "reviews":"10",
+                "dishPrice":"$10.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Peri Peri Pizza",
+                "rating":4,
+                "reviews":"10",
+                "dishPrice":"$8.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Mushroom Pizza",
+                "rating":4,
+                "reviews":"10",
+                "dishPrice":"$8.9",
+                "imageUrl":""
+            }
+        ] 
+    }
+]
+},
+{
+    "id":5,
+    "name":"Burger King",
+    "typeOfCuisines":"Burger, Fast Food",
+    "address":"Vijay Nagar, Indore",
+    "averageDeliveryTime":"30 min",
+    "distance":"1 km",
+    "restroRating": "3.5",
+    "restroReviews":"258",
+    "coupons":[
+        {
+            "percentOff":"40%",
+            "amountOff":"$20",
+            "codeName":"CRAVINGS"
+        },
+        {
+            "percentOff":"30%",
+            "amountOff":"$10",
+            "codeName":"PAYTM30"
+        }
+    ],
+    "cuisines":[{
+        "sectionName":"Recommended",
+        "dishes":[
+            {
+                "isVeg":true,
+                "dishName":"Plain Panner Burger",
+                "rating":4,
+                "reviews":"60",
+                "dishPrice":"$4.8",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Cheese Panner Burger",
+                "rating":3,
+                "reviews":"50",
+                "dishPrice":"$3.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Aalu Tikki Burger",
+                "rating":4,
+                "reviews":"100",
+                "dishPrice":"$1.9",
+                "imageUrl":""
+            }
+        ] 
+    },
+    {
+        "sectionName":"Burgers",
+        "dishes":[
+            {
+                "isVeg":true,
+                "dishName":"Cheese Burger",
+                "rating":4,
+                "reviews":"60",
+                "dishPrice":"$2.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Chicken Burger",
+                "rating":3,
+                "reviews":"5",
+                "dishPrice":"$5.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Meat Ball Burger",
+                "rating":4,
+                "reviews":"100",
+                "dishPrice":"$1.9",
+                "imageUrl":""
+            }
+        ] 
+    },
+    {
+        "sectionName":"Pizzas",
+        "dishes":[
+            {
+                "isVeg":true,
+                "dishName":"Cheese Pizza",
+                "rating":3,
+                "reviews":"6",
+                "dishPrice":"$12.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Chicken Pizza",
+                "rating":3,
+                "reviews":"5",
+                "dishPrice":"$11.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Cheese Onion Pizza",
+                "rating":4,
+                "reviews":"10",
+                "dishPrice":"$10.9",
+                "imageUrl":""
+            }
+        ] 
+    }
+]
+},
+{
+    "id":6,
+    "name":"Cake Walkers",
+    "typeOfCuisines":"Fast Food, Bakery",
+    "address":"Vijay Nagar, Indore",
+    "averageDeliveryTime":"45 min",
+    "distance":"3 km",
+    "restroRating": "3.8",
+    "restroReviews":"322",
+    "coupons":[
+        {
+            "percentOff":"40%",
+            "amountOff":"$20",
+            "codeName":"CRAVINGS"
+        },
+        {
+            "percentOff":"30%",
+            "amountOff":"$10",
+            "codeName":"PAYTM30"
+        }
+    ],
+    "cuisines":[{
+        "sectionName":"Recommended",
+        "dishes":[
+            {
+                "isVeg":true,
+                "dishName":"Black Forest Cake",
+                "rating":4,
+                "reviews":"60",
+                "dishPrice":"$4.8",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Chocolate Truffle Cake",
+                "rating":3,
+                "reviews":"10",
+                "dishPrice":"$3.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Pineapple Cake",
+                "rating":4,
+                "reviews":"100",
+                "dishPrice":"$1.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Red Velvet Cake",
+                "rating":4,
+                "reviews":"10",
+                "dishPrice":"$5.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"White Forest Cake",
+                "rating":3,
+                "reviews":"15",
+                "dishPrice":"$3.9",
+                "imageUrl":""
+            }
+        ] 
+    },
+    {
+        "sectionName":"Cakes",
+        "dishes":[
+            {
+                "isVeg":true,
+                "dishName":"Chocolate Chips Cake",
+                "rating":4,
+                "reviews":"60",
+                "dishPrice":"$4.8",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Chocolate Truffle Cake",
+                "rating":3,
+                "reviews":"10",
+                "dishPrice":"$3.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Butterscotch Cake",
+                "rating":4,
+                "reviews":"100",
+                "dishPrice":"$1.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Red Velvet Cake",
+                "rating":4,
+                "reviews":"10",
+                "dishPrice":"$5.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"White Forest Cake",
+                "rating":3,
+                "reviews":"15",
+                "dishPrice":"$4.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":" Strawberry Cake",
+                "rating":3,
+                "reviews":"15",
+                "dishPrice":"$3.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Vanilla Cake",
+                "rating":5,
+                "reviews":"15",
+                "dishPrice":"$2.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Fruit Cake",
+                "rating":3,
+                "reviews":"5",
+                "dishPrice":"$1.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Oreo Cake",
+                "rating":4,
+                "reviews":"10",
+                "dishPrice":"$4.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Kitkat Cake",
+                "rating":3,
+                "reviews":"12",
+                "dishPrice":"$3.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Rajbhog Cake",
+                "rating":3,
+                "reviews":"12",
+                "dishPrice":"$3.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Blackcurrant Cake",
+                "rating":4,
+                "reviews":"9",
+                "dishPrice":"$6.9",
+                "imageUrl":""
+            },
+            {
+                "isVeg":true,
+                "dishName":"Blueberry Cake",
+                "rating":3,
+                "reviews":"5",
+                "dishPrice":"$3.9",
+                "imageUrl":""
+            }
+        ]
+    }
+]
 }
+
+
+
 
 
 ]

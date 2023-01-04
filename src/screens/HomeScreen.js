@@ -5,6 +5,7 @@ import RestaurantCard from '../components/RestaurantCard';
 import SmallCard from '../components/SmallCard';
 import OfferCard from '../components/OfferCard';
 import Header from '../components/Header';
+import restaurantsList from '../store/data/restaurantsList.json';
 
 const restaurants = [
   {
@@ -213,7 +214,7 @@ const HomeScreen = ({navigation}) => {
         </Text>
       </View>
 
-      {restaurants.map((item, index) => {
+      {restaurantsList.map((item, index) => {
         return (
           <TouchableOpacity
             onPress={() =>
@@ -223,6 +224,7 @@ const HomeScreen = ({navigation}) => {
               })
             }>
             <RestaurantCard
+              restroId={item.id}
               key={index}
               name={item.name}
               cusines={item.cusines}

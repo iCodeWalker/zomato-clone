@@ -17,9 +17,9 @@ const FloatingButton = () => {
         borderWidth: 1,
         borderColor: 'black',
         width: '35%',
-        elevation: 20,
         shadowColor: '#52006A',
         position: 'absolute',
+        zIndex: 100,
         bottom: 20,
         alignSelf: 'center',
       }}>
@@ -28,7 +28,7 @@ const FloatingButton = () => {
           padding: 8,
           borderRadius: 10,
           backgroundColor: '#f9c74f',
-          elevation: 10,
+
           shadowColor: '#ff7b00',
         }}>
         <View

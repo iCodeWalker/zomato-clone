@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import AddButton from './AddButton';
 import VegIcon from './VegIcon';
+import NonVegIcon from './NonVegIcon';
 
 const MenuListItem = ({item}) => {
   return (
@@ -18,15 +19,20 @@ const MenuListItem = ({item}) => {
         borderBottomColor: 'grey',
         borderStyle: 'dashed',
       }}>
-      <View style={{}}>
+      <View style={{width: '50%'}}>
         <View
           style={{
             marginVertical: 10,
           }}>
-          <VegIcon />
+          {item.isVeg ? <VegIcon /> : <NonVegIcon />}
         </View>
 
-        <Text style={{fontSize: 16, color: 'black', fontWeight: '700'}}>
+        <Text
+          style={{
+            fontSize: 16,
+            color: 'black',
+            fontWeight: '700',
+          }}>
           {item.dishName}
         </Text>
         <View
@@ -95,7 +101,7 @@ const MenuListItem = ({item}) => {
           style={{width: 150, height: 150, borderRadius: 15, borderWidth: 2}}
         />
         <View style={{position: 'absolute', top: 130, right: 20, left: 20}}>
-          <AddButton />
+          <AddButton name={item.dishName} />
         </View>
       </View>
     </View>
