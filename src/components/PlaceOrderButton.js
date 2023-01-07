@@ -9,9 +9,9 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const BottomSlideButton = ({data, navigation}) => {
+const PlaceOrderButton = ({navigation}) => {
   const [modalVisible, setModalVisible] = useState(true);
-  console.log(data);
+
   return (
     <View style={styles.centeredView}>
       <View style={styles.centeredView}>
@@ -29,11 +29,11 @@ const BottomSlideButton = ({data, navigation}) => {
               <View>
                 <Text
                   style={{
-                    fontSize: 12,
+                    fontSize: 16,
                     fontWeight: '700',
                     color: '#ffffff',
                   }}>
-                  {data.length} ITEM -
+                  $30.00
                 </Text>
                 <View
                   style={{
@@ -44,28 +44,19 @@ const BottomSlideButton = ({data, navigation}) => {
                   <Text
                     style={{
                       fontSize: 16,
-                      fontWeight: '700',
+                      fontWeight: '400',
                       color: '#ffffff',
                       marginRight: 2,
                     }}>
-                    $120
-                  </Text>
-                  <Text
-                    style={{
-                      fontSize: 12,
-                      fontWeight: '700',
-                      color: '#ffffff',
-                      marginVertical: 5,
-                    }}>
-                    plus taxesss
+                    Total
                   </Text>
                 </View>
               </View>
               <TouchableOpacity
-                onPress={() => navigation.navigate('Order Screen')}>
+                onPress={() => navigation.navigate('Order Placed Screen')}>
                 <View>
                   <Text style={styles.textStyle}>
-                    Next{' '}
+                    Place Order{' '}
                     <Icon
                       name="caret-forward-outline"
                       size={14}
@@ -88,6 +79,14 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     left: 0,
+    shadowColor: '#52006A',
+    shadowOffset: {
+      width: 20,
+      height: 20,
+    },
+
+    shadowRadius: 10,
+    elevation: 60,
   },
   modalView: {
     backgroundColor: 'white',
@@ -96,14 +95,14 @@ const styles = StyleSheet.create({
     paddingBottom: 15,
     paddingTop: 20,
     paddingHorizontal: 16,
-    shadowColor: '#000',
+    shadowColor: '#52006A',
     shadowOffset: {
-      width: 0,
-      height: 2,
+      width: 20,
+      height: 15,
     },
-    shadowOpacity: 0.25,
+
     shadowRadius: 4,
-    elevation: 5,
+    elevation: 20,
   },
   button: {
     borderRadius: 5,
@@ -127,4 +126,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default BottomSlideButton;
+export default PlaceOrderButton;

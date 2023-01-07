@@ -5,7 +5,13 @@ import AddButton from './AddButton';
 import VegIcon from './VegIcon';
 import NonVegIcon from './NonVegIcon';
 
-const MenuListItem = ({item}) => {
+const MenuListItem = ({
+  item,
+  handleSlideSection,
+  handleSlideBtnData,
+  emptySlideBtnData,
+  slideBtnData,
+}) => {
   return (
     <View
       style={{
@@ -101,7 +107,13 @@ const MenuListItem = ({item}) => {
           style={{width: 150, height: 150, borderRadius: 15, borderWidth: 2}}
         />
         <View style={{position: 'absolute', top: 130, right: 20, left: 20}}>
-          <AddButton name={item.dishName} />
+          <AddButton
+            dish={item}
+            handleSlideSection={handleSlideSection}
+            handleSlideBtnData={handleSlideBtnData}
+            emptySlideBtnData={emptySlideBtnData}
+            slideBtnData={slideBtnData}
+          />
         </View>
       </View>
     </View>

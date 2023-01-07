@@ -1,18 +1,51 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import BottomSlideButton from './BottomSlideButton';
 
-const AddButton = ({name}) => {
+const AddButton = ({
+  dish,
+  handleSlideSection,
+  handleSlideBtnData,
+  emptySlideBtnData,
+  slideBtnData,
+}) => {
   const [itemCount, setItemCount] = useState(0);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [data, setData] = useState([{}]);
 
   const handleClick = () => {
     setItemCount(itemCount + 1);
+    handleSlideSection(!modalVisible);
+    setData(prev => {
+      console.log(prev);
+    });
   };
 
   const handleDecreaseCount = () => {
     setItemCount(itemCount - 1);
+    setData([]);
   };
+
+  useEffect(() => {
+    handleSlideBtnData(dish);
+
+    if (data?.length === 0) {
+      handleSlideSection(false);
+      emptySlideBtnData();
+    }
+  }, [data]);
+
+  if (data?.length === 0) {
+    handleSlideSection(false);
+  }
+
+  // useEffect(() => {
+  //   return () => {
+  //     emptySlideBtnData();
+  //   };
+  // });
+
   return itemCount === 0 ? (
     <TouchableOpacity onPress={handleClick}>
       <View

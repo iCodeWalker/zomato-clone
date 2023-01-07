@@ -3,7 +3,13 @@ import {View, Text, Image, TouchableOpacity} from 'react-native';
 import MenuListItem from './MenuListItem';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const CuisineSection = ({cuisines}) => {
+const CuisineSection = ({
+  cuisines,
+  handleSlideSection,
+  handleSlideBtnData,
+  emptySlideBtnData,
+  slideBtnData,
+}) => {
   const [itemClicked, setItemClicked] = useState(0);
 
   const handleSectionClick = id => {
@@ -44,7 +50,15 @@ const CuisineSection = ({cuisines}) => {
             </TouchableOpacity>
             <View>
               {item.dishes.map(item => {
-                return <MenuListItem item={item} />;
+                return (
+                  <MenuListItem
+                    item={item}
+                    handleSlideSection={handleSlideSection}
+                    handleSlideBtnData={handleSlideBtnData}
+                    emptySlideBtnData={emptySlideBtnData}
+                    slideBtnData={slideBtnData}
+                  />
+                );
               })}
             </View>
           </View>

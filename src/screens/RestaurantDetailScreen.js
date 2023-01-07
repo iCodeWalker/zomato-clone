@@ -14,6 +14,20 @@ import restaurantDetailData from '../store/data/restaurantDetail.json';
 
 const RestaurantDetail = ({route, navigation}) => {
   const {restaurantId, restaurantName} = route.params;
+  const [slideBtnVisible, setSlideBtnVisible] = useState(false);
+  const [slideBtnData, setSlideBtnData] = useState([]);
+
+  const handleSlideSection = isVisible => {
+    setSlideBtnVisible(isVisible);
+  };
+
+  const handleSlideBtnData = data => {
+    setSlideBtnData([...slideBtnData, data]);
+  };
+
+  const emptySlideBtnData = () => {
+    setSlideBtnData([]);
+  };
 
   return (
     <View
@@ -28,7 +42,14 @@ const RestaurantDetail = ({route, navigation}) => {
         />
         {restaurantDetailData.map((item, index) => {
           return item.id === restaurantId ? (
-            <CuisineSection key={index} cuisines={item.cuisines} />
+            <CuisineSection
+              key={index}
+              cuisines={item.cuisines}
+              handleSlideSection={handleSlideSection}
+              handleSlideBtnData={handleSlideBtnData}
+              emptySlideBtnData={emptySlideBtnData}
+              slideBtnData={slideBtnData}
+            />
           ) : null;
         })}
         <View style={{marginTop: 30, padding: 16, marginBottom: 100}}>
@@ -58,7 +79,9 @@ const RestaurantDetail = ({route, navigation}) => {
         </View>
       </ScrollView>
       {/* <FloatingButton /> */}
-      <BottomSlideButton />
+      {slideBtnVisible && (
+        <BottomSlideButton data={slideBtnData} navigation={navigation} />
+      )}
     </View>
   );
 };
