@@ -3,10 +3,10 @@ import {View, Text} from 'react-native';
 import HeaderTop from './HeaderTop';
 import SearchBar from './SearchBar';
 
-const Header = () => {
+const Header = ({navigation}) => {
   return (
     <View>
-      <HeaderTop />
+      <HeaderTop navigation={navigation} />
       <SearchBar />
     </View>
   );

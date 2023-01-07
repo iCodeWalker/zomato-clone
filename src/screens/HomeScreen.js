@@ -97,7 +97,7 @@ const restaurants = [
 const HomeScreen = ({navigation}) => {
   return (
     <ScrollView style={{height: '100%'}}>
-      <Header />
+      <Header navigation={navigation} />
       <ScrollView
         horizontal={true}
         showsHorizontalScrollIndicator={false}

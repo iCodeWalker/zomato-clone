@@ -26,6 +26,7 @@ import RestaurantDetail from './src/screens/RestaurantDetailScreen';
 import TabNavigator from './src/containers/TabNavigator';
 import OrderScreen from './src/screens/OrderScreen';
 import OrderPlacedScreen from './src/screens/OrderPlacedScreen';
+import ProfileScreen from './src/screens/ProfileScreen';
 
 const App = () => {
   return (
@@ -49,6 +50,11 @@ const App = () => {
         <Stack.Screen
           name="Order Placed Screen"
           component={OrderPlacedScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Profile Screen"
+          component={ProfileScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

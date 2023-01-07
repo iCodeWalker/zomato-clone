@@ -1,8 +1,8 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const HeaderTop = () => {
+const HeaderTop = ({navigation}) => {
   return (
     <View
       style={{
@@ -41,13 +41,14 @@ const HeaderTop = () => {
           }}>
           <Icon name="language" size={20} color="#e63946" />
         </View>
-
-        <Icon
-          name="person-circle"
-          size={50}
-          color="#a5adff"
-          style={{marginLeft: 10}}
-        />
+        <TouchableOpacity onPress={() => navigation.navigate('Profile Screen')}>
+          <Icon
+            name="person-circle"
+            size={50}
+            color="#a5adff"
+            style={{marginLeft: 10}}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );
