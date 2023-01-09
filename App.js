@@ -27,6 +27,8 @@ import TabNavigator from './src/containers/TabNavigator';
 import OrderScreen from './src/screens/OrderScreen';
 import OrderPlacedScreen from './src/screens/OrderPlacedScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
+import MapScreen from './src/screens/MapScreen';
+import LocationScreen from './src/screens/LocationScreen';
 
 const App = () => {
   return (
@@ -56,6 +58,16 @@ const App = () => {
           name="Profile Screen"
           component={ProfileScreen}
           options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Location Screen"
+          component={LocationScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Map Screen"
+          component={MapScreen}
+          options={{headerShown: true, title: 'Choose delivery location'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

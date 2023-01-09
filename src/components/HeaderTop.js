@@ -46,7 +46,10 @@ const HeaderTop = ({navigation}) => {
           onRequestClose={() => {
             setModalVisible(!modalVisible);
           }}>
-          <LocationScreen handleModalVisibility={handleModalVisibility} />
+          <LocationScreen
+            handleModalVisibility={handleModalVisibility}
+            navigation={navigation}
+          />
         </Modal>
       </View>
 
