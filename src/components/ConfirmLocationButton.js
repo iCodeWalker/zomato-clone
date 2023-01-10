@@ -1,51 +1,24 @@
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  Modal,
-  TouchableOpacity,
-  StyleSheet,
-  Pressable,
-} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const ConfirmLocationButton = () => {
+const ConfirmLocationButton = ({navigation}) => {
   return (
     <View style={styles.centeredView}>
       <View style={styles.modalView}>
-        <View
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
-            marginBottom: 15,
-          }}>
-          <Icon name="location" size={30} color="#ff4d6d" />
-          <View style={{marginLeft: 10}}>
-            <Text style={{fontSize: 18, fontWeight: '700', color: 'black'}}>
-              Ganesh Nagar
-            </Text>
-            <Text style={{fontSize: 14, fontWeight: '600', color: 'grey'}}>
-              Bajpur, Betul
-            </Text>
+        <View style={styles.textContainer}>
+          <Icon name="location" size={30} style={styles.iconStyle} />
+          <View>
+            <Text style={styles.title}>Ganesh Nagar</Text>
+            <Text style={styles.subtitle}>Bajpur, Betul</Text>
           </View>
         </View>
 
-        <Pressable
-          style={[styles.button, styles.buttonClose]}
-          onPress={() => setModalVisible(!modalVisible)}>
-          <View
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              alignSelf: 'center',
-            }}>
-            <View>
-              <Text style={styles.textStyle}>Confirm location</Text>
-            </View>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <View style={styles.button}>
+            <Text style={styles.textStyle}>Confirm location</Text>
           </View>
-        </Pressable>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -77,29 +50,40 @@ const styles = StyleSheet.create({
       width: 20,
       height: 15,
     },
-
     shadowRadius: 4,
     elevation: 20,
   },
+  textContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 15,
+  },
+  iconStyle: {color: '#ff4d6d', marginRight: 5},
   button: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ff4d6d',
+    width: '100%',
     borderRadius: 5,
     padding: 10,
     elevation: 2,
-  },
-  buttonOpen: {
-    backgroundColor: '#F194FF',
-  },
-  buttonClose: {
-    backgroundColor: '#ff4d6d',
   },
   textStyle: {
     color: 'white',
     fontWeight: '600',
     fontSize: 18,
   },
-  modalText: {
-    marginBottom: 15,
-    textAlign: 'center',
+  title: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: 'black',
+  },
+  subtitle: {
+    fontSize: 14,
+    fontWeight: '700',
   },
 });
 

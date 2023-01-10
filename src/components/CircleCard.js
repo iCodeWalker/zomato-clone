@@ -3,7 +3,7 @@ import {View, Text, Image, StyleSheet} from 'react-native';
 
 const CircleCard = ({imageUrl, title}) => {
   return (
-    <View style={{display: 'flex', alignItems: 'center', margin: 10}}>
+    <View style={styles.container}>
       <Image source={imageUrl} style={styles.imageContainer} />
       <Text style={styles.title}>{title}</Text>
     </View>
@@ -11,6 +11,11 @@ const CircleCard = ({imageUrl, title}) => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    display: 'flex',
+    alignItems: 'center',
+    margin: 10,
+  },
   imageContainer: {
     width: 70,
     height: 75,

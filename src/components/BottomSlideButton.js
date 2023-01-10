@@ -1,81 +1,45 @@
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  Modal,
-  TouchableOpacity,
-  StyleSheet,
-  Pressable,
-} from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const BottomSlideButton = ({data, navigation}) => {
-  const [modalVisible, setModalVisible] = useState(true);
-  console.log(data);
   return (
     <View style={styles.centeredView}>
-      <View style={styles.centeredView}>
-        <View style={styles.modalView}>
-          <Pressable
-            style={[styles.button, styles.buttonClose]}
-            onPress={() => setModalVisible(!modalVisible)}>
-            <View
+      <View style={styles.modalView}>
+        <View style={styles.container}>
+          <View>
+            <Text
               style={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                alignItems: 'center',
+                ...styles.textStyle,
+                fontSize: 12,
               }}>
-              <View>
-                <Text
-                  style={{
-                    fontSize: 12,
-                    fontWeight: '700',
-                    color: '#ffffff',
-                  }}>
-                  {data.length} ITEM -
-                </Text>
-                <View
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                  }}>
-                  <Text
-                    style={{
-                      fontSize: 16,
-                      fontWeight: '700',
-                      color: '#ffffff',
-                      marginRight: 2,
-                    }}>
-                    $120
-                  </Text>
-                  <Text
-                    style={{
-                      fontSize: 12,
-                      fontWeight: '700',
-                      color: '#ffffff',
-                      marginVertical: 5,
-                    }}>
-                    plus taxesss
-                  </Text>
-                </View>
-              </View>
-              <TouchableOpacity
-                onPress={() => navigation.navigate('Order Screen')}>
-                <View>
-                  <Text style={styles.textStyle}>
-                    Next{' '}
-                    <Icon
-                      name="caret-forward-outline"
-                      size={14}
-                      color="#ffffff"
-                    />
-                  </Text>
-                </View>
-              </TouchableOpacity>
+              {data.length} ITEM -
+            </Text>
+            <View style={styles.textContainer}>
+              <Text
+                style={{
+                  ...styles.textStyle,
+                  fontSize: 16,
+                }}>
+                $120
+              </Text>
+              <Text
+                style={{
+                  ...styles.textStyle,
+                  fontSize: 12,
+                }}>
+                plus taxesss
+              </Text>
             </View>
-          </Pressable>
+          </View>
+          <TouchableOpacity onPress={() => navigation.navigate('Order Screen')}>
+            <View>
+              <Text style={{...styles.textStyle, fontSize: 18}}>
+                Next{' '}
+                <Icon name="caret-forward-outline" size={14} color="#ffffff" />
+              </Text>
+            </View>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -96,30 +60,36 @@ const styles = StyleSheet.create({
     paddingBottom: 15,
     paddingTop: 20,
     paddingHorizontal: 16,
-    shadowColor: '#000',
+    shadowColor: 'red',
     shadowOffset: {
-      width: 0,
-      height: 2,
+      width: 10,
+      height: 12,
     },
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5,
   },
-  button: {
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     borderRadius: 5,
     padding: 10,
     elevation: 2,
-  },
-  buttonOpen: {
-    backgroundColor: '#F194FF',
-  },
-  buttonClose: {
     backgroundColor: '#ff4d6d',
   },
+  textContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
   textStyle: {
-    color: 'white',
-    fontWeight: '600',
-    fontSize: 18,
+    fontWeight: '700',
+    color: '#ffffff',
+    marginRight: 3,
+    marginVertical: 2,
   },
   modalText: {
     marginBottom: 15,

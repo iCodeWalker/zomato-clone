@@ -1,6 +1,10 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import IsFavouriteButton from './IsFavouriteButton';
+import OfferBadge from './OfferBadge';
+import SpecialFood from './SpecialFood';
+import VegHeading from './VegHeading';
 
 const RestaurantCard = ({
   name,
@@ -17,107 +21,21 @@ const RestaurantCard = ({
   offerAmount,
 }) => {
   return (
-    <View
-      style={{
-        marginHorizontal: 16,
-        marginBottom: 50,
-        height: 350,
-        backgroundColor: 'white',
-        borderRadius: 10,
-        elevation: 20,
-        shadowColor: '#52006A',
-      }}>
+    <View style={styles.restroCardContainer}>
       <Image
         style={styles.tinyLogo}
         source={require('../assets/images/dish.jpg')}
-        // source={{
-        //   uri: 'https://reactnative.dev/img/tiny_logo.png',
-        // }}
       />
 
-      {isVeg ? (
-        <View
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-          }}>
-          <Text
-            style={{
-              backgroundColor: 'green',
-              opacity: 0.8,
-              color: '#ffffff',
-              fontWeight: '800',
-              padding: 5,
-              width: '100%',
-              textAlign: 'center',
-              borderTopLeftRadius: 10,
-              borderTopRightRadius: 10,
-            }}>
-            <Icon name="leaf" size={15} /> PURE VEG RESTAURANT
-          </Text>
-        </View>
-      ) : (
-        <View></View>
-      )}
+      <VegHeading isVeg={isVeg} />
 
-      <View
-        style={{
-          position: 'absolute',
-          top: 40,
-          right: 10,
-        }}>
-        <View
-          style={{
-            backgroundColor: '#ffffff',
-            opacity: 0.8,
-            padding: 5,
-            borderRadius: 10,
-          }}>
-          <Text style={{color: 'black', fontWeight: '600', fontSize: 12}}>
-            {specialFood}
-          </Text>
-          <Text style={{color: 'black', fontWeight: '600', fontSize: 12}}>
-            Order for {specialFoodAmount}
-          </Text>
-        </View>
-      </View>
+      <SpecialFood
+        specialFood={specialFood}
+        specialFoodAmount={specialFoodAmount}
+      />
+      <IsFavouriteButton isFavourite={isFavourite} />
 
-      <View style={{position: 'absolute', top: 40, left: 10}}>
-        <View
-          style={{
-            backgroundColor: '#ffffffaa',
-            paddingHorizontal: 15,
-            paddingVertical: 5,
-            borderRadius: 50,
-          }}>
-          {isFavourite ? (
-            <Icon name="heart" size={25} color="#e63946" />
-          ) : (
-            <Icon name="heart-outline" size={25} color="#e63946" />
-          )}
-        </View>
-      </View>
-
-      <View style={{position: 'absolute', top: 150, left: -10}}>
-        <View
-          style={{
-            backgroundColor: '#4714dd',
-            paddingHorizontal: 15,
-            paddingVertical: 5,
-            borderTopRightRadius: 10,
-            borderBottomRightRadius: 10,
-          }}>
-          <Text style={{color: '#ffffff', fontWeight: '600', fontSize: 12}}>
-            {offerPercent} OFF
-          </Text>
-          <Text style={{color: '#ffffff', fontWeight: '600', fontSize: 12}}>
-            Up to {offerAmount}
-          </Text>
-        </View>
-      </View>
+      <OfferBadge offerAmount={offerAmount} offerPercent={offerPercent} />
 
       <View style={styles.textContainer}>
         <View>
@@ -147,6 +65,15 @@ const RestaurantCard = ({
 };
 
 const styles = StyleSheet.create({
+  restroCardContainer: {
+    marginHorizontal: 16,
+    marginBottom: 50,
+    height: 350,
+    backgroundColor: 'white',
+    borderRadius: 10,
+    elevation: 20,
+    shadowColor: '#52006A',
+  },
   tinyLogo: {
     height: 200,
     width: 360,

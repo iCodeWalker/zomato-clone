@@ -1,12 +1,5 @@
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  Modal,
-  TouchableOpacity,
-  StyleSheet,
-  Pressable,
-} from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const PlaceOrderButton = ({navigation}) => {
@@ -14,59 +7,22 @@ const PlaceOrderButton = ({navigation}) => {
 
   return (
     <View style={styles.centeredView}>
-      <View style={styles.centeredView}>
-        <View style={styles.modalView}>
-          <Pressable
-            style={[styles.button, styles.buttonClose]}
-            onPress={() => setModalVisible(!modalVisible)}>
-            <View
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-              }}>
-              <View>
-                <Text
-                  style={{
-                    fontSize: 16,
-                    fontWeight: '700',
-                    color: '#ffffff',
-                  }}>
-                  $30.00
-                </Text>
-                <View
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                  }}>
-                  <Text
-                    style={{
-                      fontSize: 16,
-                      fontWeight: '400',
-                      color: '#ffffff',
-                      marginRight: 2,
-                    }}>
-                    Total
-                  </Text>
-                </View>
-              </View>
-              <TouchableOpacity
-                onPress={() => navigation.navigate('Order Placed Screen')}>
-                <View>
-                  <Text style={styles.textStyle}>
-                    Place Order{' '}
-                    <Icon
-                      name="caret-forward-outline"
-                      size={14}
-                      color="#ffffff"
-                    />
-                  </Text>
-                </View>
-              </TouchableOpacity>
+      <View style={styles.modalView}>
+        <View style={styles.buttonContainer}>
+          <View>
+            <Text style={styles.amountStyle}>$30.00</Text>
+
+            <Text style={styles.amountStyle}>Total</Text>
+          </View>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Order Placed Screen')}>
+            <View>
+              <Text style={styles.textStyle}>
+                Place Order{' '}
+                <Icon name="caret-forward-outline" size={14} color="#ffffff" />
+              </Text>
             </View>
-          </Pressable>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -104,25 +60,27 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 20,
   },
-  button: {
+  buttonContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     borderRadius: 5,
     padding: 10,
     elevation: 2,
-  },
-  buttonOpen: {
-    backgroundColor: '#F194FF',
-  },
-  buttonClose: {
     backgroundColor: '#ff4d6d',
   },
+  amountStyle: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: '#ffffff',
+    marginRight: 2,
+  },
+
   textStyle: {
     color: 'white',
     fontWeight: '600',
     fontSize: 18,
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: 'center',
   },
 });
 

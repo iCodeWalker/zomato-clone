@@ -1,13 +1,5 @@
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  Pressable,
-  Modal,
-  Alert,
-} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, Modal} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import LocationScreen from '../screens/LocationScreen';
 
@@ -18,20 +10,12 @@ const HeaderTop = ({navigation}) => {
     setModalVisible(!modalVisible);
   };
   return (
-    <View
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-        marginTop: 5,
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        marginHorizontal: 16,
-      }}>
+    <View style={styles.headerContainer}>
       <TouchableOpacity onPress={() => setModalVisible(true)}>
         <View style={styles.headerContainer}>
           <Icon name="location" size={30} color="#e63946" />
           <View>
-            <Text style={{fontSize: 18, color: 'black', fontWeight: '800'}}>
+            <Text style={styles.textStyle}>
               Ganesh Nagar <Icon name="chevron-down" size={20} color="black" />
             </Text>
             <Text style={{color: 'black'}}>Bajpur, Betul</Text>
@@ -53,23 +37,8 @@ const HeaderTop = ({navigation}) => {
         </Modal>
       </View>
 
-      <View
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginTop: 10,
-        }}>
-        <View
-          style={{
-            elevation: 50,
-            shadowColor: '#52006A',
-            padding: 5,
-            borderColor: '#D8D5D3',
-            borderWidth: 1,
-            borderRadius: 10,
-          }}>
+      <View style={styles.iconsContainer}>
+        <View style={styles.langIconContainer}>
           <Icon name="language" size={20} color="#e63946" />
         </View>
         <TouchableOpacity onPress={() => navigation.navigate('Profile Screen')}>
@@ -89,8 +58,10 @@ const styles = StyleSheet.create({
   headerContainer: {
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: 16,
+    marginTop: 5,
+    marginHorizontal: 10,
   },
   centeredView: {
     flex: 1,
@@ -100,35 +71,23 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 20,
     padding: 35,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
   },
-  button: {
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2,
+  iconsContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 10,
   },
-  buttonOpen: {
-    backgroundColor: '#F194FF',
+  langIconContainer: {
+    elevation: 50,
+    shadowColor: '#52006A',
+    padding: 5,
+    borderColor: '#D8D5D3',
+    borderWidth: 1,
+    borderRadius: 10,
   },
-  buttonClose: {
-    backgroundColor: '#2196F3',
-  },
-  textStyle: {
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: 'center',
-  },
+  textStyle: {fontSize: 18, color: 'black', fontWeight: '800'},
 });
 
 export default HeaderTop;

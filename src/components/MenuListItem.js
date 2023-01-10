@@ -12,101 +12,42 @@ const MenuListItem = ({
   emptySlideBtnData,
   slideBtnData,
 }) => {
+  const ratingArray = [1, 2, 3, 4, 5];
   return (
-    <View
-      style={{
-        marginTop: 10,
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'flex-start',
-        paddingVertical: 40,
-        borderBottomWidth: 1,
-        borderBottomColor: 'grey',
-        borderStyle: 'dashed',
-      }}>
-      <View style={{width: '50%'}}>
-        <View
-          style={{
-            marginVertical: 10,
-          }}>
+    <View style={styles.container}>
+      <View style={styles.subContainer}>
+        <View style={styles.vegIconContainer}>
           {item.isVeg ? <VegIcon /> : <NonVegIcon />}
         </View>
 
-        <Text
-          style={{
-            fontSize: 16,
-            color: 'black',
-            fontWeight: '700',
-          }}>
-          {item.dishName}
-        </Text>
-        <View
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
-            marginTop: 10,
-          }}>
-          <View
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              padding: 5,
-              backgroundColor: '#fff6cc',
-              borderWidth: 1,
-              borderColor: '#ffe97f',
-              borderRadius: 5,
-            }}>
-            <Icon
-              name="star"
-              size={14}
-              color="#fdc500"
-              style={{marginLeft: 2}}
-            />
-            <Icon
-              name="star"
-              size={14}
-              color="#fdc500"
-              style={{marginLeft: 2}}
-            />
-            <Icon
-              name="star"
-              size={14}
-              color="#fdc500"
-              style={{marginLeft: 2}}
-            />
-            <Icon
-              name="star"
-              size={14}
-              color="#fdc500"
-              style={{marginLeft: 2}}
-            />
-            <Icon
-              name="star"
-              size={14}
-              color="#ffffff"
-              style={{marginLeft: 2}}
-            />
+        <Text style={styles.dishNameStyle}>{item.dishName}</Text>
+        <View style={styles.ratingContainer}>
+          <View style={styles.ratingIconContainer}>
+            {ratingArray.map((item, index) => {
+              return (
+                <Icon
+                  name="star"
+                  size={14}
+                  color="#fdc500"
+                  style={{marginLeft: 2}}
+                />
+              );
+            })}
           </View>
           <View>
-            <Text style={{marginLeft: 10, fontWeight: '600', color: 'black'}}>
-              {item.reviews} reviews
-            </Text>
+            <Text style={styles.reviewTextStyle}>{item.reviews} reviews</Text>
           </View>
         </View>
-        <View style={{marginTop: 10}}>
-          <Text style={{color: 'black', fontSize: 14, fontWeight: '800'}}>
-            {item.dishPrice}
-          </Text>
+        <View style={{}}>
+          <Text style={styles.dishPriceTextStyle}>{item.dishPrice}</Text>
         </View>
       </View>
       <View>
         <Image
           source={require('../assets/images/burger.jpg')}
-          style={{width: 150, height: 150, borderRadius: 15, borderWidth: 2}}
+          style={styles.imageStyle}
         />
-        <View style={{position: 'absolute', top: 130, right: 20, left: 20}}>
+        <View style={styles.buttonContainer}>
           <AddButton
             dish={item}
             handleSlideSection={handleSlideSection}
@@ -119,5 +60,68 @@ const MenuListItem = ({
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 10,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    paddingVertical: 40,
+    borderBottomWidth: 1,
+    borderBottomColor: 'grey',
+    borderStyle: 'dashed',
+  },
+  subContainer: {
+    width: '50%',
+  },
+  vegIconContainer: {
+    marginVertical: 10,
+  },
+  dishNameStyle: {
+    fontSize: 16,
+    color: 'black',
+    fontWeight: '700',
+  },
+  ratingContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  ratingIconContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    padding: 5,
+    backgroundColor: '#fff6cc',
+    borderWidth: 1,
+    borderColor: '#ffe97f',
+    borderRadius: 5,
+  },
+  reviewTextStyle: {
+    marginLeft: 10,
+    fontWeight: '600',
+    color: 'black',
+  },
+  dishPriceTextStyle: {
+    color: 'black',
+    fontSize: 14,
+    fontWeight: '800',
+    marginTop: 10,
+  },
+  imageStyle: {
+    width: 150,
+    height: 150,
+    borderRadius: 15,
+    borderWidth: 2,
+  },
+  buttonContainer: {
+    position: 'absolute',
+    top: 130,
+    right: 20,
+    left: 20,
+  },
+});
 
 export default MenuListItem;

@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import MenuListItem from './MenuListItem';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -18,31 +18,15 @@ const CuisineSection = ({
 
   return cuisines.map((item, index) => {
     return (
-      <View
-        key={index}
-        style={{
-          marginVertical: 10,
-          padding: 16,
-          backgroundColor: '#ffffff',
-          elevation: 5,
-          shadowColor: '#52006A',
-          borderRadius: 5,
-          borderLeftWidth: 4,
-          borderLeftColor: '#ff4d6d',
-        }}>
+      <View key={index} style={styles.container}>
         {itemClicked === index ? (
           <View>
             <TouchableOpacity
               onPress={() => {
                 handleSectionClick(index);
               }}>
-              <View
-                style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
-                }}>
-                <Text style={{fontSize: 18, fontWeight: '700', color: 'black'}}>
+              <View style={styles.textContainer}>
+                <Text style={styles.textStyle}>
                   {item.sectionName} ({item.dishes.length})
                 </Text>
                 <Icon name="chevron-up" size={25} style={{color: 'black'}} />
@@ -67,13 +51,8 @@ const CuisineSection = ({
             onPress={() => {
               handleSectionClick(index);
             }}>
-            <View
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-              }}>
-              <Text style={{fontSize: 18, fontWeight: '700', color: 'black'}}>
+            <View style={styles.textContainer}>
+              <Text style={styles.textStyle}>
                 {item.sectionName} ({item.dishes.length})
               </Text>
               <Icon name="chevron-down" size={25} style={{color: 'black'}} />
@@ -84,5 +63,28 @@ const CuisineSection = ({
     );
   });
 };
+
+const styles = StyleSheet.create({
+  container: {
+    marginVertical: 10,
+    padding: 16,
+    backgroundColor: '#ffffff',
+    elevation: 5,
+    shadowColor: '#52006A',
+    borderRadius: 5,
+    borderLeftWidth: 4,
+    borderLeftColor: '#ff4d6d',
+  },
+  textContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  textStyle: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: 'black',
+  },
+});
 
 export default CuisineSection;

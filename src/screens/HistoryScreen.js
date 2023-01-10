@@ -3,10 +3,10 @@ import {View, Text} from 'react-native';
 import Header from '../components/Header';
 import HistoryCard from '../components/HistoryCard';
 
-const HistoryScreen = () => {
+const HistoryScreen = ({navigation}) => {
   return (
     <View style={{backgroundColor: '#ffffff'}}>
-      <Header />
+      <Header navigation={navigation} />
       <HistoryCard />
     </View>
   );
