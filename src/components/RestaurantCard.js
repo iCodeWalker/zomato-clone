@@ -33,7 +33,7 @@ const RestaurantCard = ({
         specialFood={specialFood}
         specialFoodAmount={specialFoodAmount}
       />
-      <IsFavouriteButton isFavourite={isFavourite} />
+      <IsFavouriteButton isFavourite={isFavourite} name={name} />
 
       <OfferBadge offerAmount={offerAmount} offerPercent={offerPercent} />
 
